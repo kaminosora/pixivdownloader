@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-29T20:25:02.941Z",
+  "runDir": "test-results/native-picker-1793305502941",
+  "folder": "test-results/native-picker-1793305502941/chosen",
+  "mode": "Real native directory picker, isolated headed project Chromium; no picker or permission overrides.",
+  "checks": [
+    {
+      "name": "OPEN_CHOOSER issued token-bound native picker page",
+      "chooserUrl": "chrome-extension://chojcgloflfieecppoeklgamgooecikc/choose.html?token=REDACTED"
+    }
+  ],
+  "errors": [
+    "page.waitForFunction: Timeout 180000ms exceeded.\n    at tests/native-picker.mjs:48:17"
+  ],
+  "browserVersion": "141.0.7390.37",
+  "extensionId": "chojcgloflfieecppoeklgamgooecikc",
+  "stage": "incomplete",
+  "finishedAt": "2026-10-29T20:28:04.212Z",
+  "nativeUiAutomation": {
+    "nativeUiAutomation": "blocked",
+    "scope": "Only the uniquely titled project Chromium window was targeted. Daily Chrome was not targeted.",
+    "error": "window id 4133858 no longer belongs to Chrome; current owner is Chrome",
+    "attempts": 2,
+    "nativePermissionPromptHandled": false,
+    "externalFileWritten": false,
+    "recoveryRule": "Computer Use guidance: If state capture or window activation fails, refresh app/window selection and retry once; report exact error if recovery fails.",
+    "selectionMade": false,
+    "isolatedExecutable": ".cache/ms-playwright/chromium-1194/chrome-win/chrome.exe"
+  },
+  "publicationNote": "Local project paths are relative; ephemeral chooser tokens and direct unlisted fixture links are omitted. Test outcomes are unchanged."
+}

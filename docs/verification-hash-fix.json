@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-29T20:05:24.2542080Z",
+  "httpStatus": 200,
+  "contentType": "image/png",
+  "contentLength": "2180398",
+  "userExample": {
+    "pageCount": 5,
+    "id": "121113419",
+    "originalsAvailableWithoutLogin": false
+  },
+  "primaryCodeSource": "https://github.com/mikf/gallery-dl/commit/4654ef47f445e9ef834e8aa678c644d3395e7266",
+  "sampleNote": "Historical public-code fixture; direct unlisted and media URLs omitted from the public report. See primaryCodeSource.",
+  "publicationNote": "Local project paths are relative; ephemeral chooser tokens and direct unlisted fixture links are omitted. Test outcomes are unchanged."
+}

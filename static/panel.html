@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pixiv 原图下载器</title><link rel="stylesheet" href="panel.css"></head>
+<body><header><span class="mark">P<span>↓</span></span><div><h1>Pixiv 原图下载器</h1><p>已打开的作品 · 原图收藏</p></div><span class="local">本地处理</span></header>
+<main><section class="scope"><div class="eyebrow">保存位置</div><p id="destination">尚未选择保存文件夹</p><button id="choose" class="folder">选择保存文件夹</button><p class="hint">选定后批量保存，不逐张弹窗。请保留文件夹设置页。</p><hr><div class="eyebrow">下载范围</div><p id="context">正在读取当前窗口…</p><div class="actions"><button id="current" disabled>下载当前作品</button><button id="window" class="primary" disabled>下载本窗口全部作品</button></div><p class="hint">多图自动全部下载 · 保留原图文件名<br>动图保存 GIF，超限按原时序转视频，不保存 ZIP</p></section>
+<p id="notice" role="status" aria-live="polite"></p><section><div class="list-heading"><h2>下载任务</h2><button id="refresh" class="subtle">刷新范围</button></div><div id="jobs"><div class="empty">还没有下载任务</div></div></section></main>
+<footer>直接保存到所选文件夹，同名文件自动加序号<br>关闭面板后继续下载；请保留文件夹设置页。</footer><script type="module" src="panel.js"></script></body></html>

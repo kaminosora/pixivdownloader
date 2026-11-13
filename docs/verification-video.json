@@ -1,0 +1,772 @@
+{
+  "startedAt": "2026-11-13T19:33:30.391Z",
+  "runDir": "test-results/video-1794598410390",
+  "checks": [
+    {
+      "name": "variable-delays-and-long-final-frame",
+      "input": {
+        "delays": [
+          7,
+          13,
+          1001,
+          60000
+        ]
+      },
+      "size": 1063,
+      "mimeType": "video/mp4",
+      "extension": "mp4",
+      "codec": "avc",
+      "configCodec": "avc1.640c14",
+      "width": 64,
+      "height": 36,
+      "audioTracks": 0,
+      "trackDuration": 61.021,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 0.007,
+          "type": "key",
+          "size": 77
+        },
+        {
+          "timestamp": 0.007,
+          "duration": 0.013,
+          "type": "key",
+          "size": 76
+        },
+        {
+          "timestamp": 0.02,
+          "duration": 1.001,
+          "type": "key",
+          "size": 74
+        },
+        {
+          "timestamp": 1.021,
+          "duration": 60,
+          "type": "key",
+          "size": 75
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 7000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            241,
+            49,
+            27
+          ]
+        },
+        {
+          "timestamp": 7000,
+          "duration": 13000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            22,
+            205,
+            67
+          ]
+        },
+        {
+          "timestamp": 20000,
+          "duration": 1001000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            34,
+            87,
+            232
+          ]
+        },
+        {
+          "timestamp": 1021000,
+          "duration": 60000000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            233,
+            202,
+            20
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 61.021,
+        "width": 64,
+        "height": 36,
+        "readyState": 4
+      },
+      "progress": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "events": [
+        "load:0",
+        "encoded:1",
+        "load:1",
+        "encoded:2",
+        "load:2",
+        "encoded:3",
+        "load:3",
+        "encoded:4"
+      ],
+      "attempted": [
+        "avc1.640034"
+      ],
+      "mp4Timing": {
+        "timescale": 1000,
+        "mediaDuration": 61021,
+        "durations": [
+          7,
+          13,
+          1001,
+          60000
+        ]
+      }
+    },
+    {
+      "name": "single-frame-duration",
+      "input": {
+        "delays": [
+          1234
+        ]
+      },
+      "size": 786,
+      "mimeType": "video/mp4",
+      "extension": "mp4",
+      "codec": "avc",
+      "configCodec": "avc1.640c14",
+      "width": 64,
+      "height": 36,
+      "audioTracks": 0,
+      "trackDuration": 1.234,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 1.234,
+          "type": "key",
+          "size": 77
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 1234000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            241,
+            49,
+            27
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 1.234,
+        "width": 64,
+        "height": 36,
+        "readyState": 4
+      },
+      "progress": [
+        1
+      ],
+      "events": [
+        "load:0",
+        "encoded:1"
+      ],
+      "attempted": [
+        "avc1.640034"
+      ],
+      "mp4Timing": {
+        "timescale": 1000,
+        "mediaDuration": 1234,
+        "durations": [
+          1234
+        ]
+      }
+    },
+    {
+      "name": "equal-frame-intervals",
+      "input": {
+        "delays": [
+          40,
+          40,
+          40,
+          40
+        ]
+      },
+      "size": 1023,
+      "mimeType": "video/mp4",
+      "extension": "mp4",
+      "codec": "avc",
+      "configCodec": "avc1.640c14",
+      "width": 64,
+      "height": 36,
+      "audioTracks": 0,
+      "trackDuration": 0.16,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 0.04,
+          "type": "key",
+          "size": 77
+        },
+        {
+          "timestamp": 0.04,
+          "duration": 0.04,
+          "type": "key",
+          "size": 76
+        },
+        {
+          "timestamp": 0.08,
+          "duration": 0.04,
+          "type": "key",
+          "size": 74
+        },
+        {
+          "timestamp": 0.12,
+          "duration": 0.04,
+          "type": "key",
+          "size": 75
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 40000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            241,
+            49,
+            27
+          ]
+        },
+        {
+          "timestamp": 40000,
+          "duration": 40000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            22,
+            205,
+            67
+          ]
+        },
+        {
+          "timestamp": 80000,
+          "duration": 40000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            34,
+            87,
+            232
+          ]
+        },
+        {
+          "timestamp": 120000,
+          "duration": 40000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            233,
+            202,
+            20
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 0.16,
+        "width": 64,
+        "height": 36,
+        "readyState": 4
+      },
+      "progress": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "events": [
+        "load:0",
+        "encoded:1",
+        "load:1",
+        "encoded:2",
+        "load:2",
+        "encoded:3",
+        "load:3",
+        "encoded:4"
+      ],
+      "attempted": [
+        "avc1.640034"
+      ],
+      "mp4Timing": {
+        "timescale": 1000,
+        "mediaDuration": 160,
+        "durations": [
+          40,
+          40,
+          40,
+          40
+        ]
+      }
+    },
+    {
+      "name": "small-odd-source-dimensions",
+      "input": {
+        "delays": [
+          13,
+          29
+        ],
+        "width": 63,
+        "height": 35
+      },
+      "size": 995,
+      "mimeType": "video/mp4",
+      "extension": "mp4",
+      "codec": "avc",
+      "configCodec": "avc1.640c14",
+      "width": 64,
+      "height": 36,
+      "audioTracks": 0,
+      "trackDuration": 0.042,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 0.013,
+          "type": "key",
+          "size": 133
+        },
+        {
+          "timestamp": 0.013,
+          "duration": 0.029,
+          "type": "key",
+          "size": 141
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 13000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            241,
+            49,
+            27
+          ]
+        },
+        {
+          "timestamp": 13000,
+          "duration": 29000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            22,
+            205,
+            67
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 0.042,
+        "width": 64,
+        "height": 36,
+        "readyState": 4
+      },
+      "progress": [
+        1,
+        2
+      ],
+      "events": [
+        "load:0",
+        "encoded:1",
+        "load:1",
+        "encoded:2"
+      ],
+      "attempted": [
+        "avc1.640034"
+      ],
+      "mp4Timing": {
+        "timescale": 1000,
+        "mediaDuration": 42,
+        "durations": [
+          13,
+          29
+        ]
+      }
+    },
+    {
+      "name": "large-source-scaling",
+      "input": {
+        "delays": [
+          17,
+          43
+        ],
+        "width": 2400,
+        "height": 1600
+      },
+      "size": 2093,
+      "mimeType": "video/mp4",
+      "extension": "mp4",
+      "codec": "avc",
+      "configCodec": "avc1.640032",
+      "width": 1920,
+      "height": 1280,
+      "audioTracks": 0,
+      "trackDuration": 0.06,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 0.017,
+          "type": "key",
+          "size": 682
+        },
+        {
+          "timestamp": 0.017,
+          "duration": 0.043,
+          "type": "key",
+          "size": 684
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 17000,
+          "width": 1920,
+          "height": 1280,
+          "rgb": [
+            240,
+            48,
+            26
+          ]
+        },
+        {
+          "timestamp": 17000,
+          "duration": 43000,
+          "width": 1920,
+          "height": 1280,
+          "rgb": [
+            22,
+            205,
+            67
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 0.06,
+        "width": 1920,
+        "height": 1280,
+        "readyState": 4
+      },
+      "progress": [
+        1,
+        2
+      ],
+      "events": [
+        "load:0",
+        "encoded:1",
+        "load:1",
+        "encoded:2"
+      ],
+      "attempted": [
+        "avc1.640034"
+      ],
+      "mp4Timing": {
+        "timescale": 1000,
+        "mediaDuration": 60,
+        "durations": [
+          17,
+          43
+        ]
+      }
+    },
+    {
+      "name": "forced-vp09-variable-durations",
+      "input": {
+        "delays": [
+          7,
+          13,
+          1001,
+          60000
+        ],
+        "codec": "vp09"
+      },
+      "size": 832,
+      "mimeType": "video/webm",
+      "extension": "webm",
+      "codec": "vp9",
+      "configCodec": "vp09.00.10.08",
+      "width": 64,
+      "height": 36,
+      "audioTracks": 0,
+      "trackDuration": 61.021,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 0.007,
+          "type": "key",
+          "size": 100
+        },
+        {
+          "timestamp": 0.007,
+          "duration": 0.013,
+          "type": "key",
+          "size": 100
+        },
+        {
+          "timestamp": 0.02,
+          "duration": 1.001,
+          "type": "key",
+          "size": 106
+        },
+        {
+          "timestamp": 1.021,
+          "duration": 60,
+          "type": "key",
+          "size": 117
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 7000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            240,
+            48,
+            26
+          ]
+        },
+        {
+          "timestamp": 7000,
+          "duration": 13000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            22,
+            205,
+            67
+          ]
+        },
+        {
+          "timestamp": 20000,
+          "duration": 1001000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            34,
+            87,
+            232
+          ]
+        },
+        {
+          "timestamp": 1021000,
+          "duration": 60000000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            234,
+            203,
+            21
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 61.021,
+        "width": 64,
+        "height": 36,
+        "readyState": 4
+      },
+      "progress": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "events": [
+        "load:0",
+        "encoded:1",
+        "load:1",
+        "encoded:2",
+        "load:2",
+        "encoded:3",
+        "load:3",
+        "encoded:4"
+      ],
+      "attempted": [
+        "avc1.640034",
+        "avc1.420034",
+        "avc1.64002a",
+        "avc1.42002a",
+        "vp09.00.51.08"
+      ]
+    },
+    {
+      "name": "forced-vp8-variable-durations",
+      "input": {
+        "delays": [
+          7,
+          13,
+          1001,
+          60000
+        ],
+        "codec": "vp8"
+      },
+      "size": 652,
+      "mimeType": "video/webm",
+      "extension": "webm",
+      "codec": "vp8",
+      "configCodec": "vp8",
+      "width": 64,
+      "height": 36,
+      "audioTracks": 0,
+      "trackDuration": 61.021,
+      "packets": [
+        {
+          "timestamp": 0,
+          "duration": 0.007,
+          "type": "key",
+          "size": 63
+        },
+        {
+          "timestamp": 0.007,
+          "duration": 0.013,
+          "type": "key",
+          "size": 68
+        },
+        {
+          "timestamp": 0.02,
+          "duration": 1.001,
+          "type": "key",
+          "size": 63
+        },
+        {
+          "timestamp": 1.021,
+          "duration": 60,
+          "type": "key",
+          "size": 64
+        }
+      ],
+      "decoded": [
+        {
+          "timestamp": 0,
+          "duration": 7000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            240,
+            48,
+            26
+          ]
+        },
+        {
+          "timestamp": 7000,
+          "duration": 13000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            23,
+            204,
+            69
+          ]
+        },
+        {
+          "timestamp": 20000,
+          "duration": 1001000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            34,
+            87,
+            232
+          ]
+        },
+        {
+          "timestamp": 1021000,
+          "duration": 60000000,
+          "width": 64,
+          "height": 36,
+          "rgb": [
+            234,
+            203,
+            21
+          ]
+        }
+      ],
+      "playback": {
+        "duration": 61.021,
+        "width": 64,
+        "height": 36,
+        "readyState": 4
+      },
+      "progress": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "events": [
+        "load:0",
+        "encoded:1",
+        "load:1",
+        "encoded:2",
+        "load:2",
+        "encoded:3",
+        "load:3",
+        "encoded:4"
+      ],
+      "attempted": [
+        "avc1.640034",
+        "avc1.420034",
+        "avc1.64002a",
+        "avc1.42002a",
+        "vp09.00.51.08",
+        "vp09.00.10.08",
+        "vp8"
+      ]
+    },
+    {
+      "name": "cancel-after-first-frame-stops-input-and-closes-generator",
+      "result": {
+        "name": "AbortError",
+        "message": "操作已取消",
+        "loaded": 1,
+        "returned": true,
+        "encoded": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "different-source-dimensions-fail",
+      "result": {
+        "name": "Error",
+        "message": "动图原帧尺寸不一致，无法生成视频"
+      }
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Controlled PNG inputs and local HTTP origin; real WebCodecs encoders, muxer, demuxer, decoder and HTML video element. No Pixiv account or external save-directory grant involved.",
+    "Forced codec cases filter only VideoEncoder.isConfigSupported at the browser capability boundary; encoding and media bytes are real."
+  ],
+  "browserExecutable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+  "capabilities": {
+    "VideoEncoder": "function",
+    "VideoDecoder": "function",
+    "secure": true
+  },
+  "preferredCodec": "avc",
+  "status": "passed",
+  "finishedAt": "2026-11-13T19:33:33.703Z",
+  "publicationNote": "Local project paths are relative; ephemeral chooser tokens and direct unlisted fixture links are omitted. Test outcomes are unchanged."
+}

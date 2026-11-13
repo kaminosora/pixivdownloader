@@ -1,0 +1,11 @@
+{
+  "manifest_version":3,"name":"Pixiv 原图下载器","version":"1.2.0","minimum_chrome_version":"116",
+  "description":"选择文件夹批量保存当前窗口作品的原图，保留原文件名，动图转 GIF，超限自动按原时序转视频。",
+  "permissions":["storage","offscreen","alarms","declarativeNetRequestWithHostAccess"],
+  "host_permissions":["https://www.pixiv.net/*","https://i.pximg.net/*"],
+  "background":{"service_worker":"background.js","type":"module"},
+  "action":{"default_popup":"panel.html","default_title":"Pixiv 原图下载器"},
+  "content_scripts":[{"matches":["https://www.pixiv.net/*"],"js":["content.js"],"run_at":"document_idle"}],
+  "web_accessible_resources":[{"resources":["panel.html","panel.js","panel.css"],"matches":["https://www.pixiv.net/*"]}],
+  "content_security_policy":{"extension_pages":"script-src 'self'; object-src 'self'"}
+}

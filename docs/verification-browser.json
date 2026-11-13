@@ -1,0 +1,628 @@
+{
+  "startedAt": "2026-11-13T19:33:36.051Z",
+  "runDir": "test-results/browser-1794598416050",
+  "networkMode": "Pixiv HTML routed by Playwright; real service-worker API and offscreen CDN fetches fulfilled through CDP Fetch.",
+  "directoryMode": "Only window.showDirectoryPicker is stubbed on choose.html, returning a real OPFS FileSystemDirectoryHandle. Real extension IndexedDB, permissions, cross-context handles, file creation and writes are exercised. The OS directory dialog and external filesystem permission lifetime are not tested in headless Chromium.",
+  "checks": [
+    {
+      "name": "extension has no downloads permission or downloads API"
+    },
+    {
+      "name": "embedded panel discovers exactly two unique artwork IDs in its own window"
+    },
+    {
+      "name": "directory required before downloading; real chooser binds OPFS handle through IDB and returns to source tab",
+      "windowId": 1142254900,
+      "sourceTabId": 1142254902,
+      "pickerCalls": 1
+    },
+    {
+      "name": "window action snapshots own window and deduplicates duplicate 111 tabs",
+      "jobs": [
+        {
+          "artworkId": "111",
+          "windowId": 1142254900,
+          "status": "complete"
+        },
+        {
+          "artworkId": "222",
+          "windowId": 1142254900,
+          "status": "complete"
+        }
+      ]
+    },
+    {
+      "name": "offscreen writes exact hashed PNG/JPG bytes and GIF-only output into selected directory",
+      "files": [
+        {
+          "name": "111-0123456789abcdef0123456789abcdef_p1.jpg",
+          "size": 761
+        },
+        {
+          "name": "111-757d4d64b92a41c496c04aa34ae56855_p0.png",
+          "size": 111
+        },
+        {
+          "name": "222_ugoira.gif",
+          "size": 105
+        }
+      ]
+    },
+    {
+      "name": "actual generated GIF decodes with two frames and cumulative rounded timing",
+      "decoded": [
+        {
+          "duration": 70000,
+          "width": 4,
+          "height": 4
+        },
+        {
+          "duration": 120000,
+          "width": 4,
+          "height": 4
+        }
+      ]
+    },
+    {
+      "name": "repeat saves add (1) without changing existing bytes or requesting another directory",
+      "outputs": [
+        "111-757d4d64b92a41c496c04aa34ae56855_p0 (1).png",
+        "111-0123456789abcdef0123456789abcdef_p1 (1).jpg"
+      ]
+    },
+    {
+      "name": "other-window artwork, recommendation original and playback ZIP were never requested"
+    },
+    {
+      "name": "DNR Referer rule is scoped to extension initiator and Pixiv hosts",
+      "rules": [
+        {
+          "action": {
+            "requestHeaders": [
+              {
+                "header": "Referer",
+                "operation": "set",
+                "value": "https://www.pixiv.net/"
+              }
+            ],
+            "type": "modifyHeaders"
+          },
+          "condition": {
+            "initiatorDomains": [
+              "ebnnpjegbehfpklpidgbjcpmdbnaibma"
+            ],
+            "requestDomains": [
+              "i.pximg.net",
+              "www.pixiv.net"
+            ],
+            "resourceTypes": [
+              "xmlhttprequest"
+            ]
+          },
+          "id": 1,
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "name": "current iframe action cancels in-flight fetch; explicit retry saves one complete original",
+      "tabId": 1142254908
+    },
+    {
+      "name": "GIF conversion failure reports failed with no GIF, frame files or ZIP saved",
+      "error": "动图原帧尺寸不一致，无法生成 GIF"
+    },
+    {
+      "name": "toolbar panel shows own-window jobs and four unique open artworks",
+      "actualPopup": false,
+      "popupResult": {
+        "ok": true
+      },
+      "limitation": "Panel document opened in extension tab; toolbar popup unavailable in headless Chromium."
+    },
+    {
+      "name": "actual service worker restart retains complete and failed jobs, directory handle and unchanged saved files"
+    },
+    {
+      "name": "GIF time limit automatically saves one playable video with source filename and exact total timing, without another picker",
+      "output": "555-757d4d64b92a41c496c04aa34ae56855_ugoira.webm",
+      "size": 554,
+      "duration": 661.021,
+      "width": 4,
+      "height": 4,
+      "type": "video/webm"
+    }
+  ],
+  "errors": [],
+  "apiRequests": [
+    {
+      "url": "https://www.pixiv.net/ajax/illust/111",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/111/pages",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/222",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/222/ugoira_meta",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/111",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/111/pages",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/333",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/333/pages",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/333",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/333/pages",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/444",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/444/ugoira_meta",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/555",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "url": "https://www.pixiv.net/ajax/illust/555/ugoira_meta",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+      }
+    }
+  ],
+  "resourceRequests": [
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/111-757d4d64b92a41c496c04aa34ae56855_p0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/111-0123456789abcdef0123456789abcdef_p1.jpg",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/222_ugoira0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/222_ugoira1.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/111-757d4d64b92a41c496c04aa34ae56855_p0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/111-0123456789abcdef0123456789abcdef_p1.jpg",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/333_p0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/333_p0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/444_ugoira0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/444_ugoira1.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/555-757d4d64b92a41c496c04aa34ae56855_ugoira0.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/555-757d4d64b92a41c496c04aa34ae56855_ugoira1.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/555-757d4d64b92a41c496c04aa34ae56855_ugoira2.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    },
+    {
+      "url": "https://i.pximg.net/img-original/img/2026/10/29/01/02/03/555-757d4d64b92a41c496c04aa34ae56855_ugoira3.png",
+      "headers": {
+        "Accept": "*/*",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "source": "offscreen CDP Fetch"
+    }
+  ],
+  "extensionId": "ebnnpjegbehfpklpidgbjcpmdbnaibma",
+  "workerEnvironment": {
+    "url": "chrome-extension://ebnnpjegbehfpklpidgbjcpmdbnaibma/background.js",
+    "chromeKeys": [
+      "loadTimes",
+      "csi",
+      "action",
+      "alarms",
+      "declarativeNetRequest",
+      "dom",
+      "extension",
+      "i18n",
+      "management",
+      "offscreen",
+      "permissions",
+      "runtime",
+      "storage",
+      "tabs",
+      "windows"
+    ],
+    "id": "ebnnpjegbehfpklpidgbjcpmdbnaibma",
+    "manifest": {
+      "action": {
+        "default_popup": "panel.html",
+        "default_title": "Pixiv 原图下载器"
+      },
+      "background": {
+        "service_worker": "background.js",
+        "type": "module"
+      },
+      "content_scripts": [
+        {
+          "js": [
+            "content.js"
+          ],
+          "matches": [
+            "https://www.pixiv.net/*"
+          ],
+          "run_at": "document_idle"
+        }
+      ],
+      "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+      },
+      "description": "选择文件夹批量保存当前窗口作品的原图，保留原文件名，动图转 GIF，超限自动按原时序转视频。",
+      "host_permissions": [
+        "https://www.pixiv.net/*",
+        "https://i.pximg.net/*"
+      ],
+      "manifest_version": 3,
+      "minimum_chrome_version": "116",
+      "name": "Pixiv 原图下载器",
+      "permissions": [
+        "storage",
+        "offscreen",
+        "alarms",
+        "declarativeNetRequestWithHostAccess"
+      ],
+      "version": "1.2.0",
+      "web_accessible_resources": [
+        {
+          "matches": [
+            "https://www.pixiv.net/*"
+          ],
+          "resources": [
+            "panel.html",
+            "panel.js",
+            "panel.css"
+          ]
+        }
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "artworkId": "111",
+      "completed": 2,
+      "createdAt": 1794598421393,
+      "destinationId": "129936b5-89b1-4557-898e-56f88f386058",
+      "destinationName": "chosen-A",
+      "error": "",
+      "jobId": "f35619fe-2ad6-477c-9c9d-7d7ea0bd50e9",
+      "outputs": [
+        "111-757d4d64b92a41c496c04aa34ae56855_p0.png",
+        "111-0123456789abcdef0123456789abcdef_p1.jpg"
+      ],
+      "phase": "下载完成",
+      "runId": "ec52cfa3-7620-4b4e-92b8-e5b5e0689a6c",
+      "status": "complete",
+      "tabId": 1142254902,
+      "title": "测试作品 111",
+      "total": 2,
+      "url": "https://www.pixiv.net/artworks/111",
+      "windowId": 1142254900
+    },
+    {
+      "artworkId": "222",
+      "completed": 2,
+      "createdAt": 1794598421393,
+      "destinationId": "129936b5-89b1-4557-898e-56f88f386058",
+      "destinationName": "chosen-A",
+      "error": "",
+      "jobId": "7f3339e2-fdf3-4690-8620-e1d65220101b",
+      "outputs": [
+        "222_ugoira.gif"
+      ],
+      "phase": "下载完成",
+      "runId": "e3144d9d-52d6-430d-b9c6-74a8e83977f3",
+      "status": "complete",
+      "tabId": 1142254903,
+      "title": "测试作品 222",
+      "total": 2,
+      "url": "https://www.pixiv.net/en/artworks/222",
+      "windowId": 1142254900
+    },
+    {
+      "artworkId": "111",
+      "completed": 2,
+      "createdAt": 1794598422037,
+      "destinationId": "129936b5-89b1-4557-898e-56f88f386058",
+      "destinationName": "chosen-A",
+      "error": "",
+      "jobId": "24467ee4-54f7-4226-9262-a33ea06a20cd",
+      "outputs": [
+        "111-757d4d64b92a41c496c04aa34ae56855_p0 (1).png",
+        "111-0123456789abcdef0123456789abcdef_p1 (1).jpg"
+      ],
+      "phase": "下载完成",
+      "runId": "fa9b1549-1b23-4b2d-acb5-1200fd32aa5c",
+      "status": "complete",
+      "tabId": 1142254902,
+      "title": "测试作品 111",
+      "total": 2,
+      "url": "https://www.pixiv.net/artworks/111",
+      "windowId": 1142254900
+    },
+    {
+      "artworkId": "333",
+      "completed": 1,
+      "createdAt": 1794598422759,
+      "destinationId": "129936b5-89b1-4557-898e-56f88f386058",
+      "destinationName": "chosen-A",
+      "error": "",
+      "jobId": "cf2040bb-adc8-4fb6-9846-b552d52d0638",
+      "outputs": [
+        "333_p0.png"
+      ],
+      "phase": "下载完成",
+      "runId": "27c739d4-a7a3-4179-b87a-eb52659d719e",
+      "status": "complete",
+      "tabId": 1142254908,
+      "title": "测试作品 333",
+      "total": 1,
+      "url": "https://www.pixiv.net/artworks/333",
+      "windowId": 1142254900
+    },
+    {
+      "artworkId": "444",
+      "completed": 1,
+      "createdAt": 1794598424125,
+      "destinationId": "129936b5-89b1-4557-898e-56f88f386058",
+      "destinationName": "chosen-A",
+      "error": "动图原帧尺寸不一致，无法生成 GIF",
+      "jobId": "6a653fe7-d7c8-4862-90db-2d0987f9e0df",
+      "outputs": [],
+      "phase": "处理结束，存在失败",
+      "runId": "dd13fd70-1f4c-4d0f-9f2a-e223585c9f3e",
+      "status": "failed",
+      "tabId": 1142254909,
+      "title": "测试作品 444",
+      "total": 2,
+      "url": "https://www.pixiv.net/artworks/444",
+      "windowId": 1142254900
+    },
+    {
+      "artworkId": "555",
+      "completed": 4,
+      "createdAt": 1794598431097,
+      "destinationId": "129936b5-89b1-4557-898e-56f88f386058",
+      "destinationName": "chosen-A",
+      "error": "",
+      "jobId": "4c676e21-360e-4b11-b3e0-6b31c6c843fd",
+      "outputs": [
+        "555-757d4d64b92a41c496c04aa34ae56855_ugoira.webm"
+      ],
+      "phase": "下载完成",
+      "runId": "8e65e6a5-0fb2-4542-b877-ce853e081d37",
+      "status": "complete",
+      "tabId": 1142254911,
+      "title": "测试作品 555",
+      "total": 4,
+      "url": "https://www.pixiv.net/artworks/555",
+      "windowId": 1142254900
+    }
+  ],
+  "files": [
+    {
+      "name": "111-0123456789abcdef0123456789abcdef_p1 (1).jpg",
+      "kind": "file",
+      "size": 761
+    },
+    {
+      "name": "111-0123456789abcdef0123456789abcdef_p1.jpg",
+      "kind": "file",
+      "size": 761
+    },
+    {
+      "name": "111-757d4d64b92a41c496c04aa34ae56855_p0 (1).png",
+      "kind": "file",
+      "size": 111
+    },
+    {
+      "name": "111-757d4d64b92a41c496c04aa34ae56855_p0.png",
+      "kind": "file",
+      "size": 111
+    },
+    {
+      "name": "222_ugoira.gif",
+      "kind": "file",
+      "size": 105
+    },
+    {
+      "name": "333_p0.png",
+      "kind": "file",
+      "size": 111
+    },
+    {
+      "name": "555-757d4d64b92a41c496c04aa34ae56855_ugoira.webm",
+      "kind": "file",
+      "size": 554
+    }
+  ],
+  "status": "passed",
+  "finishedAt": "2026-11-13T19:33:52.322Z",
+  "publicationNote": "Local project paths are relative; ephemeral chooser tokens and direct unlisted fixture links are omitted. Test outcomes are unchanged."
+}
